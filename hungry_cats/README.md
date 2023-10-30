@@ -1,6 +1,5 @@
-# Run this app on snack
-
-- https://snack.expo.dev/@okjftyuj/483631
+# run this app on snack.expo.dev
+- https://snack.expo.dev/@okjftyuj/hungry_cats
 
 # Sample Snack app
 
