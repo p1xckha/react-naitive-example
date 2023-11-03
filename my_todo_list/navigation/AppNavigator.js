@@ -1,8 +1,7 @@
 /************************ 
   AppNavigator.js 
 *************************/
-import { useState, useEffect } from "react";
-import { Text, SafeAreaView, StyleSheet, Alert } from "react-native";
+
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeScreen from "../screens/HomeScreen";

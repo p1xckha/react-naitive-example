@@ -7,7 +7,7 @@ import { Text, SafeAreaView, StyleSheet, Alert } from "react-native";
 import ToDoList from "../components/ToDoList";
 import SearchBox from "../components/SearchBox";
 
-import { ToDoProvider, useToDoContext } from "../contexts/ToDoContext";
+import { useToDoContext } from "../contexts/ToDoContext";
 
 export default function SearchScreen() {
   const { toDos, setToDos } = useToDoContext();

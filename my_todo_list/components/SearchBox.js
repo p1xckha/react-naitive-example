@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   textInput: {
+    flex: 1,
     backgroundColor: "white",
   },
   searchButton: {
