@@ -3,12 +3,8 @@
 *************************/
 import { useState, useEffect } from "react";
 import { Text, SafeAreaView, StyleSheet, Alert } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import ToDoList from "../components/ToDoList";
-import AddToDo from "../components/AddToDo";
-import Header from "../components/Header";
 import SearchBox from "../components/SearchBox";
 
 import { ToDoProvider, useToDoContext } from "../contexts/ToDoContext";
@@ -24,15 +20,21 @@ export default function SearchScreen() {
     console.log("searching", query);
   };
 
+  const handleOnPressRefreshButton = function () {
+    setFilteredToDos([...toDos]);
+  };
+
   useEffect(() => {
     console.log("filteredToDos", filteredToDos);
   }, [filteredToDos]);
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
       <Text>Under development</Text>
-      <SearchBox handleOnPressSearchButton={handleOnPressSearchButton} />
+      <SearchBox
+        handleOnPressSearchButton={handleOnPressSearchButton}
+        handleOnPressRefreshButton={handleOnPressRefreshButton}
+      />
       <ToDoList toDos={filteredToDos} />
     </SafeAreaView>
   );

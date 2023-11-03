@@ -4,13 +4,17 @@
 import React, { useState } from "react";
 import { View, TextInput, Pressable, StyleSheet, Text } from "react-native";
 
-const SearchBox = function ({ handleOnPressSearchButton }) {
+const SearchBox = function ({
+  handleOnPressSearchButton,
+  handleOnPressRefreshButton,
+}) {
   const [query, setQuery] = useState("");
 
   const onChangeText = (newText) => setQuery(newText);
   const onPress = function () {
     handleOnPressSearchButton(query);
   };
+
   return (
     <View style={styles.searchBox}>
       <TextInput
@@ -18,8 +22,18 @@ const SearchBox = function ({ handleOnPressSearchButton }) {
         onChangeText={onChangeText}
         style={styles.textInput}
       />
-      <Pressable onPress={onPress} style={styles.searchButton}>
+      <Pressable
+        onPress={() => handleOnPressSearchButton(query)}
+        style={styles.searchButton}
+      >
         <Text>Search</Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() => handleOnPressRefreshButton()}
+        style={styles.searchButton}
+      >
+        <Text>Refresh</Text>
       </Pressable>
     </View>
   );
@@ -36,6 +50,7 @@ const styles = StyleSheet.create({
   searchButton: {
     backgroundColor: "gray",
     color: "white",
+    marginHorizontal: 5,
   },
 });
 
