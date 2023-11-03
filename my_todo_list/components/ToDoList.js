@@ -9,9 +9,7 @@ import { useToDoContext } from "../contexts/ToDoContext";
 
 // https://reactnative.dev/docs/flatlist
 
-const ToDoList = function () {
-  const { toDos, setToDos } = useToDoContext();
-
+const ToDoList = function ({ toDos }) {
   const renderItem = function ({ item }) {
     return <ToDoItem item={item} />;
   };

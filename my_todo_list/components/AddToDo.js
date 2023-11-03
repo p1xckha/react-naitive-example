@@ -23,7 +23,7 @@ const AddToDo = function () {
     const createdDate = new Date();
     const newToDo = {
       toDo: text,
-      createdDate: createdDate,
+      createdDate: createdDate.toLocaleString(),
       key: createdDate.getTime(), // unix time[ms]
     };
 
@@ -77,6 +77,7 @@ const AddToDo = function () {
       <TextInput
         placeholder="input todo"
         value={text}
+        placeholderTextColor="gray"
         onChangeText={onChangeText}
         style={styles.input}
       />

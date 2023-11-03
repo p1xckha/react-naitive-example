@@ -16,7 +16,6 @@ import { useToDoContext } from "../contexts/ToDoContext";
  */
 
 const ToDoItem = function ({ item }) {
-  const formattedDate = formatDateTime(item.createdDate);
   const { toDos, setToDos } = useToDoContext();
 
   const handleOnPressDeleteButton = (key) => {
@@ -29,7 +28,7 @@ const ToDoItem = function ({ item }) {
     <View style={styles.item}>
       <Text>{item.toDo}</Text>
       <View style={styles.date}>
-        <Text style={styles.dateString}>Created: {formattedDate}</Text>
+        <Text style={styles.dateString}>Created: {item.createdDate}</Text>
         <DeleteButton onPress={() => handleOnPressDeleteButton(item.key)} />
       </View>
     </View>
