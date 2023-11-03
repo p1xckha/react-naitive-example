@@ -1,6 +1,6 @@
 # snack.expo.dev
 
-- https://snack.expo.dev/@okjftyuj/mytodolist (not latest)
+- https://snack.expo.dev/@okjftyuj/mytodolist
 
 # Run this app on your local PC
 
